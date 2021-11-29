@@ -29,7 +29,8 @@
 			<th>${member.m_password}</th>
 			<th>${member.m_name}</th>
 			<th>${member.m_email}</th>
-			<th>${member.m_phone}</th>
+			<th>${member.m_number}</th>
+			<!--  detail 이라는 주소요청을 통해 회원 상세조회를 해봅시다. 상세조회는 데이터는 detail.jsp에 출력합니다. -->
 			<th>상세조회</th>
 			<th>삭제</th>
 			<th>수정</th>
