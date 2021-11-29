@@ -25,15 +25,16 @@ public class MemberService {
 	}
 	//////////////////////회원가입끝
 	//////////////////////로그인
-	public void login(MemberDTO memdto) {
+	public String login(MemberDTO memdto) {
 		String result = mr.login(memdto);
 		System.out.println(result);
 		if(result !=null) {
 			// 로그인 성공(로그인 정보(아이디)를 세션에 저장)
 			session.setAttribute("loginId", memdto.getM_id());
+			return "main";
 		}else {
 			//로그인 실패
-			
+			return "login";
 		}
 		
 	}

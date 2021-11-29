@@ -43,8 +43,8 @@ public class MemberController {
 	@RequestMapping(value="/logincheck",method=RequestMethod.POST)
 	public String login(@ModelAttribute MemberDTO memdto) {
 		//public String login(@RequestParam("m_id") String m_id, @RequestParam("m_password" String m_password))
-		 ms.login(memdto);
+		String result= ms.login(memdto);
 		
-		return "main";
+		return result;
 	}
 }
