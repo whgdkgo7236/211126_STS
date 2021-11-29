@@ -8,12 +8,12 @@
 </head>
 <body>
 	<h2>detail.jsp</h2>
-	${member.m_number }
-	${member.m_id }
-	${member.m_password }
+	${member.m_number}
+	${member.m_id}
+	${member.m_password}
 	${member.m_name }
 	${member.m_email }
-	${member.m_m_phone }
+	${member.m_phone }
 	
 	<a href="findAll"> 목록으로돌아가기</a>
 </body>

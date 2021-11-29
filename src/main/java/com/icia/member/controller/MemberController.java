@@ -68,14 +68,14 @@ public class MemberController {
 		
 		List<MemberDTO> member = ms.findAll();
 		model.addAttribute("member", member);
-		return "index";
+		return "findAll";
 	}
 	//////////////////////////////회원목록가져오기
 	///////////////////////////상세조회
 	@RequestMapping(value="/detail", method=RequestMethod.GET)
 	public String findById(@RequestParam("m_number") long m_number,Model model) {
-		MemberDTO meber =ms.findeById(m_number);
-		model.addAttribute("meber",m_number);
+		MemberDTO member =ms.findeById(m_number);
+		model.addAttribute("member",member);
 		
 		return "detail";
 	}
