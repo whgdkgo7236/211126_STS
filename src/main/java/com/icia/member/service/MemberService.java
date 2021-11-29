@@ -47,4 +47,8 @@ public class MemberService {
 		System.out.println(member);
 		return member;
 	}
+	public MemberDTO findeById(long m_number) {
+		MemberDTO member =mr.findById(m_number);
+		return member;
+	}
 }

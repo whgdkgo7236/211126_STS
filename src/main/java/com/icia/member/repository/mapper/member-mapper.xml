@@ -15,4 +15,10 @@
  	<select id="findAll" parameterType="member" resultType="member">
  		select * from memberDB; 	
  	</select>
+ 	
+ 	<select id="findById" parameterType="member" resultType="member">
+ 		select * from memberDB where m_number=#{m_number}
+ 	
+ 	</select>
+ 	
  </mapper>

@@ -31,4 +31,9 @@ public class MemberRepository {
 		
 	}
 
+	public MemberDTO findById(long m_number) {
+	
+		return sql.selectOne("Member.findById",m_number);
+	}
+
 }

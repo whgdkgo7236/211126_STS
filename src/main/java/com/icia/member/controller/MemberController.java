@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.icia.member.dto.MemberDTO;
 import com.icia.member.service.MemberService;
@@ -70,4 +71,16 @@ public class MemberController {
 		return "index";
 	}
 	//////////////////////////////회원목록가져오기
+	///////////////////////////상세조회
+	@RequestMapping(value="/detail", method=RequestMethod.GET)
+	public String findById(@RequestParam("m_number") long m_number,Model model) {
+		MemberDTO meber =ms.findeById(m_number);
+		model.addAttribute("meber",m_number);
+		
+		return "detail";
+	}
+	
+	
+	
+	
 }
