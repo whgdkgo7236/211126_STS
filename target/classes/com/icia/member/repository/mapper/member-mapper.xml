@@ -8,8 +8,11 @@
  			values(#{m_id},#{m_password},#{m_name},#{m_email},#{m_phone})
  	</insert>
  	
- 	<select id="loginMember" parameterType="member" resultType="String">
- 		select m_id from memberDB where m_id= #{m_id} and m_password= #{m_password};
+ 	<select id="loginMember" parameterType="member" resultType="member">
+ 		select * from memberDB where m_id= #{m_id} and m_password= #{m_password};
  	</select>
  	
+ 	<select id="findAll" parameterType="member" resultType="member">
+ 		select * from memberDB; 	
+ 	</select>
  </mapper>

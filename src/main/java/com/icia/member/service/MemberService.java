@@ -1,5 +1,7 @@
 package com.icia.member.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +28,12 @@ public class MemberService {
 	//////////////////////회원가입끝
 	//////////////////////로그인
 	public String login(MemberDTO memdto) {
-		String result = mr.login(memdto);
+		MemberDTO result = mr.login(memdto);
 		System.out.println(result);
 		if(result !=null) {
 			// 로그인 성공(로그인 정보(아이디)를 세션에 저장)
 			session.setAttribute("loginId", memdto.getM_id());
+			session.setAttribute("loginNumber", result.getM_number());
 			return "main";
 		}else {
 			//로그인 실패
@@ -39,4 +42,9 @@ public class MemberService {
 		
 	}
 	///////////////////////로그인끝
+	public List<MemberDTO> findAll() {
+		List<MemberDTO> member =  mr.findAll();
+		System.out.println(member);
+		return member;
+	}
 }

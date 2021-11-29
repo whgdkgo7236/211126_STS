@@ -1,5 +1,7 @@
 package com.icia.member.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.javassist.compiler.ast.Member;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,15 @@ public class MemberRepository {
 		return sql.insert("Member.insertMember", member);
 	}
 
-	public String login(MemberDTO memdto) {
+	public MemberDTO login(MemberDTO memdto) {
 			
 		
 		return sql.selectOne("Member.loginMember", memdto);
+	}
+
+	public List<MemberDTO> findAll() {
+		return sql.selectList("Member.findAll");
+		
 	}
 
 }

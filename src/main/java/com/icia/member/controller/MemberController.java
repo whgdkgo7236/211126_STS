@@ -1,5 +1,9 @@
 package com.icia.member.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,4 +51,23 @@ public class MemberController {
 		
 		return result;
 	}
+	////////////////////////////로그인마무리
+	////////////////////////////로그아웃
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		//세션 데이터를 지움
+		session.invalidate();
+		
+		return "index";
+	}
+	//////////////////////////////로그아웃끝
+	////////////////////////////회원목록가져오기 
+	@RequestMapping(value="/findAll", method=RequestMethod.GET)
+	public String findall(Model model) {
+		
+		List<MemberDTO> member = ms.findAll();
+		model.addAttribute("member", member);
+		return "index";
+	}
+	//////////////////////////////회원목록가져오기
 }

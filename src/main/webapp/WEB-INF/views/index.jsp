@@ -15,5 +15,8 @@
 	<h2>index.jsp</h2>
 	회원가입 페이지 : <a href="insert">회원가입</a>
 	로그인 페이지 : <a href="login">로그인</a>
+	
+	<!-- jsp에서 세션 가져오기 -->
+	세션값: ${sessionScope.loginId};
 </body>
 </html>
