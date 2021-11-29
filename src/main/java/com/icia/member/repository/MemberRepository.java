@@ -18,4 +18,10 @@ public class MemberRepository {
 		return sql.insert("Member.insertMember", member);
 	}
 
+	public String login(MemberDTO memdto) {
+			
+		
+		return sql.selectOne("Member.loginMember", memdto);
+	}
+
 }
