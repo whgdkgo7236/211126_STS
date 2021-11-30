@@ -24,4 +24,12 @@
  		delete from memberDB where m_number=#{m_number}
  	</delete>
  	
+ 	<select id="updateFindId" parameterType="member" resultType="member">
+ 		select * from memberDB where m_number=#{m_number}
+ 	</select>
+ 	
+ 	<update id="update" parameterType="member">
+ 		update memberDB set m_email=#{m_email},m_phone=#{m_phone} where m_number =#{m_number}
+ 	</update>
+ 	
  </mapper>

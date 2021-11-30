@@ -87,7 +87,25 @@ public class MemberController {
 		
 		return "redirect:/findAll";
 	}
-	
-	
+	///////////////////////////삭제
+	////////////////////////////수정
+	@RequestMapping(value="/Update",method=RequestMethod.GET)
+	public String Update(@RequestParam("m_number") long m_number,Model model) {
+		model.addAttribute("member",ms.UpdateFindId(m_number));
+		System.out.println("update : "+model);
+		
+		return "update";
+	}
+	@RequestMapping(value="/member_update",method=RequestMethod.POST)
+	public String member_update(@ModelAttribute MemberDTO member, Model model) {
+		ms.Update(member);
+		
+	//	member=ms.findeById(member.getM_number());
+	//	model.addAttribute("member",member);
+	//	return "detail";
+		
+		
+		return "redirect:/detail?m_number="+member.getM_number();
+	}
 	
 }

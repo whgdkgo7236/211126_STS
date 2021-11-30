@@ -40,8 +40,7 @@
 					이메일, 전화번호만 수정할수 있음.
 					update.jsp에 입력한 내용을 서버로 전당하여 수정을 처리하고 해당 회원의 detail 페이지를 출력할것-->
 					
-			
-			<th>수정</th>
+			<th><a href="Update?m_number=${member.m_number} ">수정</a></th>
 			
 		</tr>
 		

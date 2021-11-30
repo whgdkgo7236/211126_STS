@@ -55,4 +55,12 @@ public class MemberService {
 		mr.DeleteById(m_number);
 		
 	}
+	public MemberDTO UpdateFindId(long m_number) {
+		return mr.UpdateFindId(m_number);
+		
+	}
+	public void Update(MemberDTO member) {
+		mr.Update(member);
+		
+	}
 }

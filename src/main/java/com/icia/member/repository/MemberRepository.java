@@ -41,4 +41,14 @@ public class MemberRepository {
 		
 	}
 
+	public MemberDTO UpdateFindId(long m_number) {
+		MemberDTO member = sql.selectOne("Member.updateFindId",m_number);
+		return member;
+	}
+
+	public void Update(MemberDTO member) {
+		sql.update("Member.update",member);
+		
+	}
+
 }
