@@ -51,4 +51,8 @@ public class MemberService {
 		MemberDTO member =mr.findById(m_number);
 		return member;
 	}
+	public void DeleteById(long m_number) {
+		mr.DeleteById(m_number);
+		
+	}
 }

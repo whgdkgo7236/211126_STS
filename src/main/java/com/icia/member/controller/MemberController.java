@@ -79,7 +79,14 @@ public class MemberController {
 		
 		return "detail";
 	}
-	
+	///////////////////////////상세조회
+	//////////////////////////삭제
+	@RequestMapping(value="/Delete", method=RequestMethod.GET)
+	public String DeleteById(@RequestParam("m_number") long m_number) {
+		ms.DeleteById(m_number);
+		
+		return "redirect:/findAll";
+	}
 	
 	
 	
