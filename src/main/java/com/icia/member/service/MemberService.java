@@ -47,7 +47,7 @@ public class MemberService {
 		System.out.println(member);
 		return member;
 	}
-	public MemberDTO findeById(long m_number) {
+	public MemberDTO findById(long m_number) {
 		MemberDTO member =mr.findById(m_number);
 		return member;
 	}
@@ -61,6 +61,16 @@ public class MemberService {
 	}
 	public void Update(MemberDTO member) {
 		mr.Update(member);
+		
+	}
+	public String idDuplicate(String m_id) {
+		String result = mr.idDuplicate(m_id);
+		System.out.println("service : "+result);
+		if(result == null) {
+			return "ok";// 조회결과가 없기 떄문에 ㅎ매당 아이디는 사용 가능
+		}else {
+			return "no";//조회 결과가 있기 때문에 해당 아이디는 사용불가능
+		}
 		
 	}
 }

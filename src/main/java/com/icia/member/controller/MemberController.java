@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.icia.member.dto.MemberDTO;
 import com.icia.member.service.MemberService;
@@ -74,7 +75,7 @@ public class MemberController {
 	///////////////////////////상세조회
 	@RequestMapping(value="/detail", method=RequestMethod.GET)
 	public String findById(@RequestParam("m_number") long m_number,Model model) {
-		MemberDTO member =ms.findeById(m_number);
+		MemberDTO member =ms.findById(m_number);
 		model.addAttribute("member",member);
 		
 		return "detail";
@@ -107,5 +108,21 @@ public class MemberController {
 		
 		return "redirect:/detail?m_number="+member.getM_number();
 	}
-	
+	// 아이디 중복 체크
+	@RequestMapping(value="/idDuplicate", method=RequestMethod.POST)
+	public @ResponseBody String idDuplicate(@RequestParam("m_id") String m_id) {
+		System.out.println("memberController.idDuplicate(): "+m_id);
+		String result = ms.idDuplicate(m_id);
+		System.out.println("memberController.idDuplicate(): "+result);
+		return result;
+	}
+	///아이디 중복체크 끝
+	////  ajax 로 상세조회
+	@RequestMapping(value = "/detailAjax", method=RequestMethod.POST)
+	public @ResponseBody MemberDTO detailAjax(@RequestParam("m_number") long m_number) {
+		
+		MemberDTO member = ms.findById(m_number);
+		
+		return member;
+	}
 }

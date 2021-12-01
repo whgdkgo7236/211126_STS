@@ -43,7 +43,7 @@
 
 <body>
 	<form action="member_update" method="POST" name="update_form">
-		아이디 : <input type="text" name="m_number" value=${member.m_id} readonly >
+		아이디 : <input type="text" name="m_number" value=${member.m_id} readonly>
 		비밀번호 : <input type="text" name="m_number" id="m_password">
 		이름 : <input type="text" name="m_number" value=${member.m_name} readonly>
 		이메일 : <input type="text" name="m_number" value=${member.m_email}>

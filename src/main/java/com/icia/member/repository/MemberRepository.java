@@ -51,4 +51,9 @@ public class MemberRepository {
 		
 	}
 
+	public String idDuplicate(String m_id) {
+		
+		return sql.selectOne("Member.idDuplicate", m_id);
+	}
+
 }

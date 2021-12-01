@@ -32,4 +32,8 @@
  		update memberDB set m_email=#{m_email},m_phone=#{m_phone} where m_number =#{m_number}
  	</update>
  	
+ 	<select id="idDuplicate" parameterType="String" resultType="String">
+ 		select m_id from memberDB where m_id=#{m_id}
+ 	</select>
+ 	
  </mapper>
